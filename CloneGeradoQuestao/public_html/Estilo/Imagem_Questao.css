@@ -1,9 +1,9 @@
-.dropdown {
+.detalhe {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.detalhe-conteudo {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -12,7 +12,7 @@
     z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
+.detalhe:hover .detalhe-conteudo {
     display: block;
 }
 
