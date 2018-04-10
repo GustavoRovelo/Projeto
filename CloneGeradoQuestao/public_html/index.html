@@ -3,53 +3,54 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="Estilo/Login.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
-        <h2>Login</h2>
-        <p>
-        <h4>E-mail</h4>
-    </p>
-    <p>
-        <input type="email" placeholder="Digite seu E-mail..." width="100%">
-    </p>
+        <div class="row">
+            <div class="column side"></div>                
+            <div class="column middle">
+                <h2>Login</h2>
+                <h4>E-mail</h4>
+                <input type="text" placeholder="Digite seu E-mail..." width="100%">
+                <h4>Senha</h4>
+                <input type="password" placeholder="Digite sua Senha..." width="100%">
 
-    <p>
-    <h4>E-mail</h4>
-</p>
-<p>
-    <input type="password" placeholder="Digite sua Senha..." width="100%">
-</p>
+                <div class="container">
+                    <!-- Trigger the modal with a button -->
+                    <a  data-toggle="modal" data-target="#myModal" style="font-size: 16px">Esqueci a Senha</a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
 
-
-<div class="container">
-
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Esqueci a Senha</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        <input type="text" placeholder="Digite seu E-mail..." width="100%">
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-</body>
+                <button type="button" style="background-color: #4CAF50;
+                        color: white;
+                        padding: 12px 20px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        float: right;">Entrar</button>                
+            </div> 
+    </body>
 </html>
