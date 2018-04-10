@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script>tinymce.init({selector: 'textarea'});</script>
+        <link rel="stylesheet" type="text/css" href="Estilo/Barra_Menus.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Corpo_Responsivo.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Formularios.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Imagem_Questao.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Menu_Dropdown.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/texto_relatorio.css">
+        <title>Gerador de Questão</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Bem-Vindo ao Gerador de Questão</h1>
+        </div>
+
+        <!-- Início do código do menu da página -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown_menu">
+                <a href="javascript:void(0)" class="dropbtn_menu">Questão</a>
+                <div class="dropdown-content-menu">
+                    <a href="ConsultaQuestao.html">Consultar</a>
+                    <a href="PaginaInicial.html">Adicionar Questão</a>
+                    <a href="AdicionarMateria.html">Adicionar Matéria</a>
+                    <a href="#">Editar</a>
+                    <a href="Gerar.html">Gerar</a>
+
+                </div>
+
+            </li>
+            <li class="dropdown_menu">
+                <a href="javascript:void(0)" class="dropbtn_menu">Relatório</a>
+                <div class="dropdown-content-menu">
+                    <a href="#">Consultar</a>
+                    <a href="Questao.html">Editar</a>
+                    <a href="#">Alunos</a>
+                </div>
+            </li>
+            <li style="float: right"><a href="#news">Sobre</a></li>
+        </ul>
+        <!-- Fim do código do menu da página -->
+        
+        <div class="row">
+            <div class="column side"></div>
+            <div class="column middle">
+                <div class="header">
+                    <h2>Prova</h2>
+                </div>
+                <textarea class="area_texto">Next, start a free trial!</textarea>
+            </div>
+            <div class="column side"></div>
+        </div>
+
+        <div class="footer">
+            <h4>Colocar COPYRIGHT no rodapé</h4>
+        </div>
+    </body>
+</html>

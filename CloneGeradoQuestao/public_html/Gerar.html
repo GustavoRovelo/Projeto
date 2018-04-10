@@ -1,0 +1,71 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="Estilo/Barra_Menus.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Corpo_Responsivo.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Formularios.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Imagem_Questao.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/Menu_Dropdown.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/DragAndDrop.css">
+        <link rel="stylesheet" type="text/css" href="Estilo/File.css">
+        <script language="JavaScript" src="JavaScript/Funcao.js"></script>
+        <script language="JavaScript" src="JavaScript/File.js"></script>
+        <script language="JavaScript" src="JavaScript/Num_Materia.js"></script>
+        <title>Gerador de Questão</title></head>
+    <body>
+        <div class="header">
+            <h1>Bem-Vindo ao Gerador de Questão</h1>
+        </div>
+
+        <!-- Início do código do menu da página -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown_menu">
+                <a href="javascript:void(0)" class="dropbtn_menu">Questão</a>
+                <div class="dropdown-content-menu">
+                    <a href="ConsultaQuestao.html">Consultar</a>
+                    <a href="PaginaInicial.html">Adicionar Questão</a>
+                    <a href="AdicionarMateria.html">Adicionar Matéria</a>
+                    <a href="#">Editar</a>
+                    <a href="Gerar.html">Gerar</a>
+
+                </div>
+
+            </li>
+            <li class="dropdown_menu">
+                <a href="javascript:void(0)" class="dropbtn_menu">Relatório</a>
+                <div class="dropdown-content-menu">
+                    <a href="#">Consultar</a>
+                    <a href="Questao.html">Editar</a>
+                    <a href="#">Alunos</a>
+                </div>
+            </li>
+            <li style="float: right"><a href="#news">Sobre</a></li>
+        </ul>
+        <!-- Fim do código do menu da página -->
+        
+        <form action="#">
+            <div class="row">
+
+                <div class="column side"></div>
+                <div class="column middle">
+                    <!--AQUI COMEÇA O FORMULÁRIO-->
+                    <div class="container">
+                        <div class="row">
+                            <label>Numero de provas:</label>
+                                <input type="number" min="1" id="NdeProva"><br>
+                            <label>Numero de questões:</label>
+                                <input type="number" min="1" id="NdeQuest"><br>
+                            <label>Numero de Materias:</label>
+                                <input type="number" min="1" id="NdeMat"><br>
+                                
+                                <input type="button" id="teste" value="gerar" onclick="Validar()"/>
+                                <table id="item"></table>                  
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
