@@ -8,57 +8,121 @@
         <link rel="stylesheet" type="text/css" href="Estilo/Barra_Menus.css">
         <link rel="stylesheet" type="text/css" href="Estilo/Corpo_Responsivo.css">
         <script src="JavaScript/FLogin.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
-
     <body>
-        <div class="row">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+            <!-- Brand -->
+            <a class="navbar-brand" href="PaginaInicial.html">Logo</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Questão
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="ConsultaQuestao.html">Consultar</a>
+                        <a class="dropdown-item" href="PaginaInicial.html">Adicionar</a>
+                        <a class="dropdown-item" href="#">Editar</a>
+                        <a class="dropdown-item" href="Gerar.html">Gerar</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Matéria
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="AdicionarMateria.html">Cadastrar</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Relatório
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Unidade</a>
+                        <a class="dropdown-item" href="#">Alunos</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Entrar
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html">Entrar</a>
+                        <a class="dropdown-item" href="PaginaCadastro.html">Cadastre-se</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="column side"></div>
+
+        <div class="column middle">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="width: 70%"><h2>Login</h2></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label>E-mail</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="email" placeholder="Digite seu E-mail..."></td>
+                    </tr>
+                    <tr>
+                        <td><label>Senha</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="pass" placeholder="Digite sua Senha..."></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form id="formEmail">
+                                <!-- Trigger/Open The Modal -->
+                                <a id="showModal">Esqueceu a Senha ?</a>
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Esqueci a senha</h2>
+                                        <p>
+                                            <input id="RecEmail" type="text" name="EmailRecuperacao" placeholder="Digite seu E-mail...">
+                                        </p>
+                                        <input id="btRecEmail" type="button" value="Enviar" onclick="validarEmail()">
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" style="float: right" value="Entrar" onclick="validaDados()"></td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="column side"></div>
-
-            <div class="column middle">
-                <div class="row">
-                    <h2>Login</h2>
-                    <label>E-mail</label>
-                    <br>
-                    <input type="text" id="email" placeholder="Digite seu E-mail...">
-                    <br>
-                    <label>Senha</label>
-                    <br>
-                    <input type="password" id="pass" placeholder="Digite sua Senha...">
-                    <br>
-                    <br>
-                </div>
-
-                <div class="row">
-                    <form id="formEmail">
-                        <!-- Trigger/Open The Modal -->
-                        <a id="showModal" >Esqueci a Senha</a>
-                        <!-- The Modal -->
-                        <div id="myModal" class="modal">
-
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <h2>Esqueci a senha</h2>
-                                <p>
-                                    <input id="RecEmail" type="text" name="EmailRecuperacao" placeholder="Digite seu E-mail...">
-                                </p>
-                                <input id="btRecEmail" type="button" value="Enviar" onclick="validarEmail()">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-
-                <div class="row">
-                    <br>
-
-                    <input type="button" style="float: left" value="Entrar" onclick="validaDados()">
-                </div>    
-            </div>
-
-            <div class="row">
-                <div class="column side"></div>
-            </div>
         </div>
 
         <script>
