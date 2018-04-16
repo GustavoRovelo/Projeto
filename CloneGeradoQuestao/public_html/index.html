@@ -31,7 +31,7 @@
                 <div class="row">
                     <form id="formEmail">
                         <!-- Trigger/Open The Modal -->
-                        <a id="showModal">Esqueci a Senha</a>
+                        <a id="showModal" >Esqueci a Senha</a>
                         <!-- The Modal -->
                         <div id="myModal" class="modal">
 
@@ -60,5 +60,46 @@
                 <div class="column side"></div>
             </div>
         </div>
+
+        <script>
+            var modal = document.getElementById('myModal');
+            var a = document.getElementById('showModal');
+            var span = document.getElementsByClassName("close")[0];
+
+            a.onclick = function () {
+                modal.style.display = "block";
+            };
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            function validarEmail() {
+                var email = document.getElementById('RecEmail').value;
+
+                if (email.length <= 0) {
+                    document.getElementById('RecEmail').focus();
+                } else {
+                    enviarEmail(email);
+                }
+            }
+
+            function validaDados() {
+                var email = document.getElementById('email').value;
+                var senha = document.getElementById('pass').value;
+
+                if ((email.length > 0) && (senha.length > 0)) {
+                    window.location = 'PaginaInicial.html';
+                } else {
+                    alert("Dados inválidos");
+                }
+            }
+        </script>
     </body>
 </html>
