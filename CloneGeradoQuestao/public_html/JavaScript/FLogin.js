@@ -1,20 +1,23 @@
-var modal = document.getElementById('myModal');
-var a = document.getElementById('showModal');
-var span = document.getElementsByClassName("close")[0];
+function executaModal() {
 
-a.onclick = function () {
-    modal.style.display = "block";
-};
+    var modal = document.getElementById('myModal');
+    var a = document.getElementById('showModal');
+    var span = document.getElementsByClassName("close")[0];
 
-span.onclick = function () {
-    modal.style.display = "none";
-};
+    a.onclick = function () {
+        modal.style.display = "block";
+    };
 
-window.onclick = function (event) {
-    if (event.target === modal) {
+    span.onclick = function () {
         modal.style.display = "none";
-    }
-};
+    };
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+}
 
 function validarEmail() {
     var email = document.getElementById('RecEmail').value;

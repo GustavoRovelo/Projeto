@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
             <!-- Brand -->
             <a class="navbar-brand" href="PaginaInicial.html">Logo</a>
 
@@ -62,198 +62,264 @@
             </ul>
         </nav>
 
-
-        <form method="post" action="#" name="formularioQuestao">
-            <div class="row">
-
-                <div class="column side"></div>
-                <div class="column middle">
-                    <!--AQUI COMEÇA O FORMULÁRIO-->
-                    <div class="row">
-                        <label for="disciplina">Selecione a área</label>
-                        <select id="disciplina" name="disciplina">
-                            <option value=""></option>
-                            <option value="humanas">Humanas</option>
-                            <option value="cien_bio">Ciências Biológicas</option>
-                            <option value="ling_estra">Línguas Estrangeiras</option>
-                            <option value="tecno">Tecnologia</option>
-                            <option value="cont">Contábeis</option>
-                            <option value="cont">PI</option>
-                        </select>
-                    </div>
-
-                    <div class="row">
-                        <label for="country">Selecione a dificuldade</label>
-                        <select id="dificuldade" name="dificuldade">
-                            <option value=""></option>
-                            <option value="facil">Fácil</option>
-                            <option value="medio">Médio</option>
-                            <option value="dificil">Difícil</option>
-                        </select>
-                    </div>
-
-                    <div class="row">
-                        <label for="subject">Digite a questão</label>
-                        <textarea id="subject" name="subject" placeholder="Escreva aqui sua questão" style="height:200px"></textarea>
-                        <br><br>
-                    </div>
-
-                    <div class="row">
-                        <table style="width: 100%">
-                            <thead>
-                                <tr>
-                                    <th style="width: 80%">
-                                        <!-- Imagem da questão -->
-                                        <div class="detalhe">
-                                            <img id="img_cabecalho" src="" alt="" width="100" height="75">
-
-                                            <!-- Imagem ao passar o Mouse -->    
-                                            <div class="detalhe-conteudo">
-                                                <img id="img_cabecalho1" alt="" src="" width="400" height="300">
-                                            </div>
-
-                                        </div>
-                                    </th>
-                                    <th style="width: 20%">
-                                        <input id="img_cabecalho_file" type="file" onchange="trocarImagem('img_cabecalho_file')" style="height: 50px">
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-
-                    <div class="row">
-                        <h4>Escreva a resposta e marque qual a correta</h4>
-                    </div>
-
-
-                    <!------------------ Questão A ------------------>
-                    <div class="row">
-                        <input type="radio" name="respostaCerta" value="A" />
-                        <label for="fname">Resposta A</label>
-                        <input type="text" id="txt_Resp_A" placeholder="Resposta A..">
-                    </div>
-
-                    <div class="row">
-                        <table style="width: 100%">
-                            <thead>
-                                <tr>
-                                    <th style="width: 80%">
-                                        <div class="detalhe">
-                                            <img id="img_quest_A" src="" alt="" width="100" height="75">
-
-                                            <!-- Imagem ao passar o Mouse -->    
-                                            <div class="detalhe-conteudo">
-                                                <img id="img_quest_A1" alt="" src="" width="400" height="300">
-                                            </div>
-
-                                        </div>
-                                    </th>
-                                    <th style="width: 20%">
-                                        <!-- Imagem da questão -->
-                                        <input id="img_quest_A_file" type="file" onchange="trocarImagem('img_quest_A_file')">
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-
-                    <!------------------ Questão B ------------------>
-                    <div class="row">
-                        <input type="radio" name="respostaCerta" value="B" />
-                        <label for="fname">Resposta B</label>
-                        <input type="text" id="txt_Resp_B" placeholder="Resposta B..">
-                    </div>
-
-                    <div class="row">
-                        <!-- Imagem da questão -->
-                        <div class="detalhe">
-                            <img id="img_quest_B" src="" alt="" width="100" height="75">
-
-                            <!-- Imagem ao passar o Mouse -->    
-                            <div class="detalhe-conteudo">
-                                <img id="img_quest_B1" alt="" src="" width="400" height="300">
-                            </div>
-
-                        </div>
-                        <input id="img_quest_B_file" type="file" onchange="trocarImagem('img_quest_B_file')">
-                    </div>
-
-                    <!------------------ Questão C ------------------>
-                    <div class="row">
-                        <input type="radio" name="respostaCerta" value="C" />
-                        <label for="fname">Resposta C</label>
-                        <input type="text" id="txt_Resp_C" placeholder="Resposta C..">
-                    </div>
-
-                    <div class="row">s
-                        <!-- Imagem da questão -->
-                        <div class="detalhe">
-                            <img id="img_quest_C" src="" alt="" width="100" height="75">
-
-                            <!-- Imagem ao passar o Mouse -->    
-                            <div class="detalhe-conteudo">
-                                <img id="img_quest_C1" alt="" src="" width="400" height="300">
-                            </div>
-
-                        </div>
-                        <input id="img_quest_C_file" type="file" onchange="trocarImagem('img_quest_C_file')">
-                    </div>
-
-                    <!------------------ Questão D ------------------>
-                    <div class="row">
-                        <input type="radio" name="respostaCerta" value="D" />
-                        <label for="fname">Resposta D</label>
-                        <input type="text" id="txt_Resp_D" placeholder="Resposta D..">
-                    </div>
-
-                    <div class="row">
-                        <!-- Imagem da questão -->
-                        <div class="detalhe">
-                            <img id="img_quest_D" src="" alt="" width="100" height="75">
-
-                            <!-- Imagem ao passar o Mouse -->    
-                            <div class="detalhe-conteudo">
-                                <img id="img_quest_D1" alt="" src="" width="400" height="300">
-                            </div>
-
-                        </div>
-                        <input id="img_quest_D_file" type="file" onchange="trocarImagem('img_quest_D_file')">
-                    </div>
-
-                    <!------------------ Questão E ------------------>
-                    <div class="row">
-                        <input type="radio" name="respostaCerta" value="E" />
-                        <label for="fname">Resposta E</label>
-                        <input type="text" id="txt_Resp_E" placeholder="Resposta E..">
-                    </div>
-
-                    <div class="row">
-                        <!-- Imagem da questão -->
-                        <div class="dropdown">
-                            <img id="img_quest_E" src="" alt="" width="100" height="75">
-
-                            <!-- Imagem ao passar o Mouse -->    
-                            <div class="detalhe-conteudo">
-                                <img id="img_quest_E1" alt="" src="" width="400" height="300">
-                            </div>
-
-                        </div>
-                        <input id="img_quest_E_file" type="file" onchange="trocarImagem('img_quest_E_file')">
-                    </div>
-
-                    <div class="row">
-                        <br><br>
-                        <input type="button" value="Enviar Resposta" onclick="validarTransacao()">
-                    </div>
-                    </form>
-                </div>
-
-            </div>
+        <div class="row">
             <div class="column side"></div>
 
-            <div class="footer">
-                <h4>Colocar COPYRIGHT no rodapé</h4>
+            <div class="column middle">
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <th style="width: 20%"><label>Selecione a área</label></th>
+                            <th style="width: 80%">
+                                <select id="disciplina" name="disciplina">
+                                    <option value=""></option>
+                                    <option value="humanas">Humanas</option>
+                                    <option value="cien_bio">Ciências Biológicas</option>
+                                    <option value="ling_estra">Línguas Estrangeiras</option>
+                                    <option value="tecno">Tecnologia</option>
+                                    <option value="cont">Contábeis</option>
+                                    <option value="cont">PI</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><label>Selecione a dificuldade</label></td>
+                            <td>
+                                <select id="dificuldade" name="dificuldade">
+                                    <option value=""></option>
+                                    <option value="facil">Fácil</option>
+                                    <option value="medio">Médio</option>
+                                    <option value="dificil">Difícil</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Digite a questão</label></td>
+                            <td></td>
+                        </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 100%">
+                            <textarea id="subject" name="subject" placeholder="Escreva aqui sua questão" style="height:200px"></textarea>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <!-- Imagem da questão -->
+                            <div class="detalhe">
+                                <img id="img_cabecalho" src="" alt="" width="100" height="75">
+
+                                <!-- Imagem ao passar o Mouse -->    
+                                <div class="detalhe-conteudo">
+                                    <img id="img_cabecalho1" alt="" src="" width="400" height="300">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input id="img_cabecalho_file" type="file" onchange="trocarImagem('img_cabecalho_file')" style="height: 50px">
+                        </td>
+                    </tr>
+                </table> 
+
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td><h4>Escreva a resposta e marque qual a correta</h4></td>
+                    </tr>
+                    <!------------------ Questão A ------------------>
+                    <tr>
+                        <td>
+                            <input type="radio" name="respostaCerta" value="A" />
+                            <label>Resposta A</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="txt_Resp_A" placeholder="Resposta A.."></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detalhe">
+                                    <img id="img_quest_A"  src="" alt="" width="100" height="75">
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_quest_A1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <!-- Imagem da questão -->
+                                <input id="img_quest_A_file" type="file" onchange="trocarImagem('img_quest_A_file')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!------------------ Questão B ------------------>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <input type="radio" name="respostaCerta" value="B" />
+                            <label>Resposta B</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="txt_Resp_B" placeholder="Resposta B.."></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detalhe">
+                                    <img id="img_quest_B"  src="" alt="" width="100" height="75">
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_quest_B1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <!-- Imagem da questão -->
+                                <input id="img_quest_B_file" type="file" onchange="trocarImagem('img_quest_B_file')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!------------------ Questão C ------------------>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <input type="radio" name="respostaCerta" value="C" />
+                            <label>Resposta C</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="txt_Resp_C" placeholder="Resposta C.."></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detalhe">
+                                    <img id="img_quest_C"  src="" alt="" width="100" height="75">
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_quest_C1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <!-- Imagem da questão -->
+                                <input id="img_quest_C_file" type="file" onchange="trocarImagem('img_quest_C_file')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!------------------ Questão D ------------------>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <input type="radio" name="respostaCerta" value="D" />
+                            <label>Resposta D</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="txt_Resp_D" placeholder="Resposta D.."></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detalhe">
+                                    <img id="img_quest_D"  src="" alt="" width="100" height="75">
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_quest_D1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <!-- Imagem da questão -->
+                                <input id="img_quest_D_file" type="file" onchange="trocarImagem('img_quest_D_file')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!------------------ Questão E ------------------>
+                <table  style="width: 100%">
+                    <tr>
+                        <td>
+                            <input type="radio" name="respostaCerta" value="E" />
+                            <label>Resposta E</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="txt_Resp_E" placeholder="Resposta A.."></td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detalhe">
+                                    <img id="img_quest_E"  src="" alt="" width="100" height="75">
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_quest_E1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <!-- Imagem da questão -->
+                                <input id="img_quest_E_file" type="file" onchange="trocarImagem('img_quest_E_file')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width: 100%">
+                    <tbody>
+                        <tr style="width: 100%">
+                            <td>
+                                <input type="button" style="width: 20%; float: right" value="Enviar Resposta" onclick="validarTransacao()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
+            <div class="column side"></div>
+        </div>
+
+        <div class="footer">
+            <h4>Colocar COPYRIGHT no rodapé</h4>
+        </div>
     </body>
 </html>
