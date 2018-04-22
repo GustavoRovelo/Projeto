@@ -3,73 +3,88 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="Estilo/Barra_Menus.css">
         <link rel="stylesheet" type="text/css" href="Estilo/Corpo_Responsivo.css">
         <link rel="stylesheet" type="text/css" href="Estilo/Formularios.css">
-        <link rel="stylesheet" type="text/css" href="Estilo/Imagem_Questao.css">
-        <link rel="stylesheet" type="text/css" href="Estilo/Menu_Dropdown.css">
-        <link rel="stylesheet" type="text/css" href="Estilo/DragAndDrop.css">
-        <link rel="stylesheet" type="text/css" href="Estilo/File.css">
-        <script language="JavaScript" src="JavaScript/Funcao.js"></script>
-        <script language="JavaScript" src="JavaScript/File.js"></script>
         <script language="JavaScript" src="JavaScript/Num_Materia.js"></script>
         <title>Gerador de Questão</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="header">
-            <h1>Bem-Vindo ao Gerador de Questão</h1>
-        </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+            <!-- Brand -->
+            <a class="navbar-brand" href="PaginaInicial.html">Logo</a>
 
-        <!-- Início do código do menu da página -->
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li class="dropdown_menu">
-                <a href="javascript:void(0)" class="dropbtn_menu">Questão</a>
-                <div class="dropdown-content-menu">
-                    <a href="ConsultaQuestao.html">Consultar</a>
-                    <a href="PaginaInicial.html">Adicionar Questão</a>
-                    <a href="AdicionarMateria.html">Adicionar Matéria</a>
-                    <a href="#">Editar</a>
-                    <a href="Gerar.html">Gerar</a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
 
-                </div>
-
-            </li>
-            <li class="dropdown_menu">
-                <a href="javascript:void(0)" class="dropbtn_menu">Relatório</a>
-                <div class="dropdown-content-menu">
-                    <a href="#">Consultar</a>
-                    <a href="Questao.html">Editar</a>
-                    <a href="#">Alunos</a>
-                </div>
-            </li>
-            <li style="float: right"><a href="#news">Sobre</a></li>
-        </ul>
-        <!-- Fim do código do menu da página -->
-         
-         
-            <div class="row">
-
-                <div class="column side"></div>
-                <div class="column middle">
-                    <h2>Adicionar Materia</h2>
-                    <p>Cadastre a materia desejada com as informações dejesadas abaixo</p>
-                    <!--AQUI COMEÇA O FORMULÁRIO-->
-                    <div class="container">
-                        <form action="#">
-                            <div class="row"></div>
-                            <label>Nome da materia:</label>
-                            <input type="text">
-                            <label>Descrição da materia:</label>
-                            <textarea rows="5"> </textarea><br><br>
-                            <input type="submit" value="Adicionar">
-                        </form>
-
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Questão
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="ConsultaQuestao.html">Consultar</a>
+                        <a class="dropdown-item" href="PaginaInicial.html">Adicionar</a>
+                        <a class="dropdown-item" href="#">Editar</a>
+                        <a class="dropdown-item" href="Gerar.html">Gerar</a>
                     </div>
-                        
-                </div>
-                    
-            </div>
-         
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Matéria
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="AdicionarMateria.html">Cadastrar</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Relatório
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Unidade</a>
+                        <a class="dropdown-item" href="#">Alunos</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Entrar
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html">Entrar</a>
+                        <a class="dropdown-item" href="PaginaCadastro.html">Cadastre-se</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="column side"></div>
+        <div class="column middle">
+            <h2>Adicionar Materia</h2>
+            <p>Cadastre a materia desejada com as informações dejesadas abaixo</p>
+            <!--AQUI COMEÇA O FORMULÁRIO-->
+            <form action="#">
+                <div class="row"></div>
+                <label>Nome da materia:</label>
+                <input type="text">
+                <label>Descrição da materia:</label>
+                <textarea rows="5"> </textarea><br><br>
+                <input type="submit" value="Adicionar">
+            </form>
+        </div>
     </body>
 </html>

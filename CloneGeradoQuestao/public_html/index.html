@@ -13,7 +13,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+=======
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+>>>>>>> 6cbddd6b9e2488e200e523a7f36825a81a354e52
             <!-- Brand -->
             <a class="navbar-brand" href="PaginaInicial.html">Logo</a>
 
@@ -56,12 +60,26 @@
                     </div>
                 </li>
 
+<<<<<<< HEAD
+=======
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Entrar
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html">Entrar</a>
+                        <a class="dropdown-item" href="PaginaCadastro.html">Cadastre-se</a>
+                    </div>
+                </li>
+
+>>>>>>> 6cbddd6b9e2488e200e523a7f36825a81a354e52
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
                 </li>
             </ul>
         </nav>
 
+<<<<<<< HEAD
         <div class="row">
             <div class="column side"></div>
 
@@ -110,6 +128,99 @@
             <div class="row">
                 <div class="column side"></div>
             </div>
+=======
+        <div class="column side"></div>
+
+        <div class="column middle">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="width: 70%"><h2>Login</h2></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label>E-mail</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="email" placeholder="Digite seu E-mail..."></td>
+                    </tr>
+                    <tr>
+                        <td><label>Senha</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="pass" placeholder="Digite sua Senha..."></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form id="formEmail">
+                                <!-- Trigger/Open The Modal -->
+                                <a id="showModal">Esqueceu a Senha ?</a>
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Esqueci a senha</h2>
+                                        <p>
+                                            <input id="RecEmail" type="text" name="EmailRecuperacao" placeholder="Digite seu E-mail...">
+                                        </p>
+                                        <input id="btRecEmail" type="button" value="Enviar" onclick="validarEmail()">
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" style="float: right" value="Entrar" onclick="validaDados()"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="column side"></div>
+>>>>>>> 6cbddd6b9e2488e200e523a7f36825a81a354e52
         </div>
+
+        <script>
+            var modal = document.getElementById('myModal');
+            var a = document.getElementById('showModal');
+            var span = document.getElementsByClassName("close")[0];
+
+            a.onclick = function () {
+                modal.style.display = "block";
+            };
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            function validarEmail() {
+                var email = document.getElementById('RecEmail').value;
+
+                if (email.length <= 0) {
+                    document.getElementById('RecEmail').focus();
+                } else {
+                    enviarEmail(email);
+                }
+            }
+
+            function validaDados() {
+                var email = document.getElementById('email').value;
+                var senha = document.getElementById('pass').value;
+
+                if ((email.length > 0) && (senha.length > 0)) {
+                    window.location = 'PaginaInicial.html';
+                } else {
+                    alert("Dados inválidos");
+                }
+            }
+        </script>
     </body>
 </html>
