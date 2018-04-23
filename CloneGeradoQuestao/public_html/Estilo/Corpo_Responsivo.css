@@ -3,11 +3,9 @@
 }
 
 body {
+    width: 100%;
     font-family: Arial;
-<<<<<<< HEAD
 /*    padding: 10px;*/
-=======
->>>>>>> 6cbddd6b9e2488e200e523a7f36825a81a354e52
     background: #f1f1f1;
 }
 
@@ -44,6 +42,7 @@ body {
 
 /* Clear floats after the columns */
 .row:after {
+    width: 100%;
     content: "";
     display: table;
     clear: both;
@@ -51,6 +50,7 @@ body {
 
 /* Footer */
 .footer {
+    width: 100%;
     padding: 20px;
     text-align: center;
     background: #ddd;
