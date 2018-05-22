@@ -1,5 +1,4 @@
 function executaModal() {
-
     var modal = document.getElementById('myModal');
     var a = document.getElementById('showModal');
     var span = document.getElementsByClassName("close")[0];
