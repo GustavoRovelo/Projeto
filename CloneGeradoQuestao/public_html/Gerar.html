@@ -19,13 +19,9 @@
 
             <!-- Links -->
             <ul class="navbar-nav">
-<<<<<<< HEAD
-
-=======
-              <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="home.html">Home</a>
                 </li>
->>>>>>> bcd2fe9bb2864d17360abfb6f2620b468f4cc1b3
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -106,13 +102,16 @@
                             </tr>
                             <tr>
                                 <td><input type="number" min="1" id="NdeMat"><br> </td>
-                                <td><input type="button" id="gerarTabela" value="Criar" onclick="criarTabela()" style="width: 50%"/></td>
+                                <td>
+                                    <input type="button" id="gerarTabela" value="Criar" style="width: 50%"
+                                           onclick="criarTabelaQuestao(document.getElementById('NdeQuest').value,
+                                                                       document.getElementById('NdeMat').value)"/>
+                                </td>
                             </tr>
-                            <tr></tr>
                         </tbody>
-                    </table>
+                    </table>                    
 
-                    <table id="item"></table>
+                    <table id="item" style="width: 100%"></table>
 
                     <table id="acoesFinais" style="width: 100%; visibility: hidden">
                         <tbody>
@@ -126,7 +125,9 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>    
+                    </table>
+                    
+                    <textarea id="html"></textarea>
                 </div>
             </div>
         </form>
