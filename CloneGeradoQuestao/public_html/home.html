@@ -1,7 +1,12 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
+        <title>Home</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Estilo/Corpo_Responsivo.css">
         <link rel="stylesheet" href="Estilo/Formularios.css">
@@ -10,19 +15,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script language="JavaScript" src="JavaScript/Num_Materia.js"></script>
-        <title>Gerador de Questão</title></head>
+
+    </head>
     <body>
-        <!--Inicio do Menu-->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
             <!-- Brand -->
             <a class="navbar-brand" href="home.html">Logo</a>
 
             <!-- Links -->
             <ul class="navbar-nav">
-              <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="home.html">Home</a>
                 </li>
-
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -71,61 +75,41 @@
                 </li>
             </ul>
         </nav>
-        <!-- Fim do código do menu da página -->
-
-        <form action="#">
-            <div class="column side"></div>
-            <div class="column middle">
-                <!--AQUI COMEÇA O FORMULÁRIO-->
-                <div class="row">
-                    <h1>Gerar Prova</h1>
-                    <table style="width: 100%">
-                        <tbody>
-                            <tr>
-                                <td style="width: 50%"><label>Número de provas:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeProva"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label>Número de questões:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeQuest"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label>Número de Materias:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeMat"><br> </td>
-                                <td><input type="button" id="gerarTabela" value="Criar" onclick="criarTabela()" style="width: 50%"/></td>
-                            </tr>
-                            <tr></tr>
-                        </tbody>
-                    </table>
-
-                    <table id="item"></table>
-
-                    <table id="acoesFinais" style="width: 100%; visibility: hidden">
-                        <tbody>
-                            <tr>
-                                <td style="width: 40%"></td>
-                                <td style="width: 30%">
-                                    <input type="button" id="cancelarProva" value="Cancelar" onclick="cancelaAcao()" style="width: 84%"/>
-                                </td>
-                                <td style="width: 30%">
-                                    <input type="button" id="gerarProva" value="Gerar" onclick="salvaAcao()" style="width: 84%"/>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>    
-                </div>
+        <div class="column side"></div>
+        <div class="column middle">
+            <h1>Home</h1>
+            <div class="w3-content w3-section" style="width:400px;;height: 200px">
+                <img class="mySlides" src="prova1.jpg" style="width:100%;">
+                <img class="mySlides" src="prova2.jpg" style="width:100%;height: auto">
+                <img class="mySlides" src="prova3.jpg" style="width:100%;height: auto">
             </div>
-        </form>
+            <label> Vejas a funcionalidades disponiveis </label><br>
+            <label> Cadastre, consulte materias </label><br>
+            <input type="button" style="float: center" value="Materias">
+            <label> Cadastro,edições,consulta de questões </label><br>
+            <input type="button" value="Questões">
+            <label> Saiba mais sobre o desenvolvimento dessa plataforma </label><br>
+            <input type="button" value="Sobre">
+
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {
+                    myIndex = 1
+                }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
     </body>
+
 </html>
