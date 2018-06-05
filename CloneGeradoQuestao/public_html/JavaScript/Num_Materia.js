@@ -72,5 +72,10 @@ function cancelaAcao() {
 }
 
 function excluirLinha(i) {
+    var qtdMateria = document.getElementById('NdeMat').value;
     document.getElementById('item').deleteRow(i);
+    
+    if (qtdMateria > 0){
+        document.getElementById('NdeMat').value = qtdMateria - 1;
+    }
 }
