@@ -74,3 +74,7 @@ function cancelaAcao() {
 function excluirLinha(i) {
     document.getElementById('item').deleteRow(i);
 }
+
+function salvaAcao() {
+    location.href = "Questao.html";
+}
