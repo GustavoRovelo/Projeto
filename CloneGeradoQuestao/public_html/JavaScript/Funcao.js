@@ -4,6 +4,8 @@ function trocarImagem(el) {
             var img = document.getElementById('img_cabecalho_file').value;
             document.getElementById('img_cabecalho').src = img;
             document.getElementById('img_cabecalho1').src = img;
+            document.getElementById('img_cabecalho').style = 'visible';
+            document.getElementById('img_cabecalho1').style = 'visible';
             break;
 
         case 'img_quest_A_file':
