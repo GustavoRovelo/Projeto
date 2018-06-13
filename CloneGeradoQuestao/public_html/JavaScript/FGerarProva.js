@@ -1,22 +1,16 @@
-function  criarTabelaQuestao(nQuestao, nMateria) {
-    var table = document.getElementById('item');
+function  validarDados(nQuestao, nMateria) {
     if (nQuestao <= 0) {
         alert("Necessário preencher o Número de Questão");
     } else if (nMateria <= 0) {
         alert("Necessário preencher o Número de Matéria");
     } else if (nMateria > nQuestao) {
         alert("O número de Matéria não pode ultrapassar a quantidade de Questão");
-    } else if (table.rows.length === 0) {
-        Materia(nMateria);
     } else {
-        while (table.rows.length > 0) {
-            table.deleteRow(0);
-        }
-        Materia(nMateria);
+        gerarTabelaDinamica(nMateria);
     }
 }
 
-function Materia(num) {
+function gerarTabelaDinamica(num) {
     var tabelaFinal = '';
     var cabecalhoTab = '<thead>\n\
                             <tr>\n\
@@ -29,13 +23,13 @@ function Materia(num) {
                         </thead>';
 
     var inicioCorpo = '<tbody>';
-    var fimCorpo    = '</tbody>';
+    var fimCorpo = '</tbody>';
 
     tabelaFinal += cabecalhoTab;
     tabelaFinal += inicioCorpo;
 
     for (var i = 0; i < num; i++) {
-        tabelaFinal += 
+        tabelaFinal +=
                 '<tr>\n\
                      <td>\n\
 		       <select id="disciplina" name="disciplina">\n\
@@ -60,11 +54,9 @@ function Materia(num) {
     tabelaFinal += fimCorpo;
 
     document.getElementById('item').innerHTML += tabelaFinal;
-    
+
     document.getElementById('acoesFinais').style.visibility = "visible";
     document.getElementById('gerarTabela').style.visibility = "hidden";
-    
-    document.getElementById('html').innerHTML += tabelaFinal;
 }
 
 function cancelaAcao() {
@@ -72,9 +64,20 @@ function cancelaAcao() {
 }
 
 function excluirLinha(i) {
-    document.getElementById('item').deleteRow(i);
+    var materia = document.getElementById('NdeMat').value;
+
+    if (materia > 1) {
+        document.getElementById('item').deleteRow(i);
+        materia--;
+        document.getElementById('NdeMat').value = materia;
+    }
 }
 
 function salvaAcao() {
+    
     location.href = "Questao.html";
+}
+
+function calcularTotalQuestao(){
+    
 }

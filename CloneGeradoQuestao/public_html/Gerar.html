@@ -19,13 +19,6 @@
 
             <!-- Links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="home.html">Home</a>
-                </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="home.html">Home</a>
-                </li>
-
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -80,43 +73,52 @@
             <div class="column side"></div>
             <div class="column middle">
                 <!--AQUI COMEÇA O FORMULÁRIO-->
+                <h2 style="text-align: center">Gerar Prova</h2>
                 <div class="row">
-                    <h1>Gerar Prova</h1>
                     <table style="width: 100%">
                         <tbody>
                             <tr>
-                                <td style="width: 50%"><label>Número de provas:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeProva"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label>Número de questões:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeQuest"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label>Número de Materias:</label></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1" id="NdeMat"><br> </td>
-                                <td>
-                                    <input type="button" id="gerarTabela" value="Criar" style="width: 50%"
-                                           onclick="criarTabelaQuestao(document.getElementById('NdeQuest').value,
-                                                                       document.getElementById('NdeMat').value)"/>
+                                <td style="width: 33%">
+                                    <label>Número de Provas</label>
+                                    <input type="number" min="1" id="NdeProva">
+                                </td>
+                                <td style="width: 33%">
+                                    <label>Número de Questões</label>
+                                    <input type="number" min="1" id="NdeQuest">
+                                </td>
+                                <td style="width: 33%">
+                                    <label>Número de Matérias</label>
+                                    <input type="number" min="1" id="NdeMat">
                                 </td>
                             </tr>
                         </tbody>
-                    </table>                    
+                    </table>
+                </div>
 
+                <div class="row"><br></div>
+
+                <!--Tabela criada para deixa botão na direita-->
+                <div class="row">
+                    <table  style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="button" id="gerarTabela" value="Criar" style="width: 33%"
+                                           onclick="validarDados(document.getElementById('NdeQuest').value,
+                                                           document.getElementById('NdeMat').value)"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row">
                     <table id="item" style="width: 100%"></table>
+                </div>
 
+                <div class="row"><br></div>
+                
+                <div class="row">
                     <table id="acoesFinais" style="width: 100%; visibility: hidden">
                         <tbody>
                             <tr>
@@ -130,8 +132,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    
-                    <textarea id="html"></textarea>
                 </div>
             </div>
         </form>
