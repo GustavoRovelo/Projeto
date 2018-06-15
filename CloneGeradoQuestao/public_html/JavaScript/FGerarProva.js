@@ -28,23 +28,26 @@ function gerarTabelaDinamica(num) {
     tabelaFinal += cabecalhoTab;
     tabelaFinal += inicioCorpo;
 
+    var id;
+
     for (var i = 0; i < num; i++) {
+        id = i + 1;
         tabelaFinal +=
                 '<tr>\n\
-                     <td>\n\
-		       <select id="disciplina" name="disciplina">\n\
-		         <option value=""></option>\n\
-			 <option value="humanas">Humanas</option>\n\
-			 <option value="cien_bio">Ciências Biológicas</option>\n\
-			 <option value="ling_estra">Línguas Estrangeiras</option>\n\
-			 <option value="tecno">Tecnologia</option>\n\
-			 <option value="cont">Contábeis</option>\n\
-			 <option value="cont">PI</option>\n\
-		       </select>\n\
+                    <td>\n\
+                        <select id="disciplina" name="disciplina">\n\
+                            <option value=""></option>\n\
+                            <option value="humanas">Humanas</option>\n\ \n\
+                            <option value="cien_bio">Ciências Biológicas</option>\n\
+                            <option value="ling_estra">Línguas Estrangeiras</option>\n\
+                            <option value="tecno">Tecnologia</option>\n\
+                            <option value="cont">Contábeis</option>\n\
+                            <option value="cont">PI</option>\n\
+                        </select>\n\
                     </td>\n\
-                    <td><input type="number"></td>\n\
-                    <td><input type="number"></td>\n\
-                    <td><input type="number"></td>\n\
+                    <td><input type="number" class="valor"></td>\n\
+                    <td><input type="number" class="valor"></td>\n\
+                    <td><input type="number" class="valor"></td>\n\
                     <td>\n\
 			<input type="button" value="Remover" onclick="excluirLinha(this.parentNode.parentNode.rowIndex)">\n\
                     </td>\n\
@@ -74,10 +77,5 @@ function excluirLinha(i) {
 }
 
 function salvaAcao() {
-    
     location.href = "Questao.html";
-}
-
-function calcularTotalQuestao(){
-    
 }
