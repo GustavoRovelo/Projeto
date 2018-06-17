@@ -1,3 +1,4 @@
+var google;
 google.maps.event.addDomListener(window, 'load', init);
 
 var map;
@@ -8,12 +9,12 @@ function init() {
 		zoom: 17,
 		zoomControl: true,
 		zoomControlOptions: {
-			style: google.maps.ZoomControlStyle.SMALL,
+			style: google.maps.ZoomControlStyle.SMALL
 		},
 		disableDoubleClickZoom: true,
 		mapTypeControl: true,
 		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+			style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
 		},
 		scaleControl: false,
 		scrollwheel: true,
@@ -96,9 +97,8 @@ function init() {
 			{ saturation: -97 }
 			]
 		}
-		],
-		
-	}
+		]
+	};
 
 	var mapElement = document.getElementById('map');
 	var map = new google.maps.Map(mapElement, mapOptions);
