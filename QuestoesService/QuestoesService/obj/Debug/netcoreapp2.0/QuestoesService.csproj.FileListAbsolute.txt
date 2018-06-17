@@ -1,0 +1,11 @@
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\bin\Debug\netcoreapp2.0\QuestoesService.deps.json
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\bin\Debug\netcoreapp2.0\QuestoesService.runtimeconfig.json
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\bin\Debug\netcoreapp2.0\QuestoesService.runtimeconfig.dev.json
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\bin\Debug\netcoreapp2.0\QuestoesService.dll
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\bin\Debug\netcoreapp2.0\QuestoesService.pdb
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.csprojResolveAssemblyReference.cache
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.csproj.CoreCompileInputs.cache
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.AssemblyInfoInputs.cache
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.AssemblyInfo.cs
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.dll
+C:\Users\pablo\source\repos\QuestoesService\QuestoesService\obj\Debug\netcoreapp2.0\QuestoesService.pdb
