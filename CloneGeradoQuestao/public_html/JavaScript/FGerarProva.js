@@ -80,7 +80,7 @@ function excluirLinha(i) {
 }
 
 function salvarAcao() {
-    var opcao = confirm("Deseja cancelar ?");
+    var opcao = confirm("Deseja continuar ?");
     if (opcao) {
         location.href = "DownloadProva.html";
     }
