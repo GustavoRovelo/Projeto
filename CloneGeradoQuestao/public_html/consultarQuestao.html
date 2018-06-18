@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="Gerador de Questão" content="">
+        <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+        <title>Gerador de Questão</title>
+
+        <link rel="shortcut icon" href="Images/gt_favicon.png">
+
+        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="Style/bootstrap.min.css">
+        <link rel="stylesheet" href="Style/font-awesome.min.css">
+
+        <link rel="stylesheet" href="Style/bootstrap-theme.css" media="screen" >
+        <link rel="stylesheet" href="Style/main.css">
+
+        <script src="JavaScript/FGerarProva.js"></script>
+        <script language="JavaScript" src="jsPDF/jspdf.js"></script>
+        <script language="JavaScript" src="jsPDF/dist/jspdf.min.js"></script>   
+
+        <script src="JavaScript/html5shiv.js"></script>
+        <script src="JavaScript/respond.min.js"></script>
+    </head>
+
+    <body class="home">
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="Images/logo.png" alt="Gerador de Questão"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Questão<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cadastrarQuestao.html">Cadastrar</a></li>
+                                <li class="active"><a href="consultarQuestao.html">Consultar</a></li>
+                                <li class="active"><a href="gerarProva.html">Gerar Provas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matérias<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cadastrarMateria.html">Cadastrar</a></li>
+                                <li class="active"><a href="consultarMateria.html">Consultar</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Sobre.html">Sobre</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a class="btn" href="signin.html">Entrar / Cadastrar</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+        <!-- /.navbar -->
+
+        <header id="head" class="secondary"></header>
+
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Filtro</li>
+            </ol>
+
+            <div class="row">
+
+                <!-- Sidebar -->
+                <aside class="col-md-4 sidebar sidebar-left">
+
+                    <div class="row widget">
+                        <div class="col-xs-10">
+                            <label>Código</label>
+                            <input class="form-control" type="text" id="codigo" onkeyup="pesquisarCampo('codigo', 0)" 
+                                   placeholder="Código...">
+                        </div>
+                    </div>
+                    <div class="row widget">
+                        <div class="col-xs-10">
+                            <label>Descrição</label>
+                            <input class="form-control" type="text" id="descricao" onkeyup="pesquisarCampo('descricao', 1)"
+                                   placeholder="Descrição...">
+                        </div>
+                    </div>
+                    <div class="row widget">
+                        <div class="col-xs-10">
+                            <label>Matéria</label>
+                            <input class="form-control" type="text" id="materia" onkeyup="pesquisarCampo('materia', 2)"
+                                   placeholder="Matéria...">
+                        </div>
+                    </div>
+
+                    <div class="row widget">
+                        <div class="col-xs-10">
+                            <label>Dificuldade</label>
+                            <select class="form-control" id="dificuldade" onchange="pesquisarCampo('dificuldade', 3)">
+                                <option value="">Selecione...</option>
+                                <option value="facil">Fácil</option>
+                                <option value="medio">Médio</option>
+                                <option value="dificil">Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row widget">
+                        <div class="col-xs-10">
+                            <button class="btn btn-action btn-lg" role="button">Pesquisar</button>
+                        </div>
+                    </div>
+
+                </aside>
+                <!-- /Sidebar -->
+
+                <!-- Article main content -->
+                <article class="col-md-8 maincontent">
+                    <header class="page-header">
+                        <h1 class="page-title">Consulta</h1>
+                    </header>
+                    <div>
+                        <div>
+                            <table class="table" style="width: 100%" id="tbDadosQuestoes">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%">#</th>
+                                        <th style="width: 40%">Descrição</th>
+                                        <th style="width: 40%">Matéria</th>
+                                        <th style="width: 10%">Dificuldade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>Difícil</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>Fácil</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>Médio</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /Article -->
+                        </div>
+                </article>
+            </div><!-- /container -->
+
+            <footer id="footer">
+
+                <div class="footer1">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-3 widget">
+                                <h3 class="widget-title">Contato</h3>
+                                <div class="widget-body">
+                                    <p>+55 11 9999-9999<br>
+                                        <a href="mailto:#">teste@teste.com</a><br>
+                                        <br>
+                                        R. Casa do Ator, 275 - Vila Olimpia, São Paulo - SP, 04546-001
+                                    </p>	
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 widget">
+                                <h3 class="widget-title">Siga</h3>
+                                <div class="widget-body">
+                                    <p class="follow-me-icons clearfix">
+                                        <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                        <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                                        <a href=""><i class="fa fa-github fa-2"></i></a>
+                                        <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                                    </p>	
+                                </div>
+                            </div>
+                        </div> <!-- /row of widgets -->
+                    </div>
+                </div>
+
+                <div class="footer2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 widget">
+                                <div class="widget-body">
+                                    <p class="simplenav">
+                                        <a href="#">Home</a> | 
+                                        <a href="Sobre.html">Sobre</a> |
+                                        <a href="contact.html">Contato</a> |
+                                        <b><a href="signup.html">Entrar</a></b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 widget">
+                                <div class="widget-body">
+                                    <p class="text-right">
+                                        Copyright &copy; 2018. Designed by <a href="http://gettemplate.com/">gettemplate</a> 
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div> <!-- /row of widgets -->
+                    </div>
+                </div>
+            </footer>	
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="JavaScript/headroom.min.js"></script>
+        <script src="JavaScript/jQuery.headroom.min.js"></script>
+        <script src="JavaScript/template.js"></script>
+
+    </body>
+</html>

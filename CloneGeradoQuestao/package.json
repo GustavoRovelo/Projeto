@@ -1,8 +1,6 @@
 {
-    "name": "CloneGeradoQuestao",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "maurc",
-    "contributors": [],
-    "dependencies": {}
+    "name": "TesteSiteNovo", "version": "1.0.0", "keywords": [
+        "util", "functional", "server", "client", "browser"
+    ], "author": "maurc", "contributors": [
+    ], "dependencies": {}
 }

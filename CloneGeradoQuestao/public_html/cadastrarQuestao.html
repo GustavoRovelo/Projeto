@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="Gerador de Questão" content="">
+        <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+        <title>Gerador de Questão</title>
+
+        <link rel="shortcut icon" href="Images/gt_favicon.png">
+
+        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="Style/bootstrap.min.css">
+        <link rel="stylesheet" href="Style/font-awesome.min.css">
+
+        <link rel="stylesheet" href="Style/bootstrap-theme.css" media="screen" >
+        <link rel="stylesheet" href="Style/main.css">
+        <link rel="stylesheet" href="Style/Formulario.css">
+        
+        <script src="JavaScript/FGerarProva.js"></script>
+        <script language="JavaScript" src="jsPDF/jspdf.js"></script>
+        <script language="JavaScript" src="jsPDF/dist/jspdf.min.js"></script>   
+
+        <script src="JavaScript/html5shiv.js"></script>
+        <script src="JavaScript/respond.min.js"></script>
+    </head>
+
+    <body class="home">
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="Images/logo.png" alt="Gerador de Questão"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Questão<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cadastrarQuestao.html">Cadastrar</a></li>
+                                <li class="active"><a href="consultarQuestao.html">Consultar</a></li>
+                                <li class="active"><a href="gerarProva.html">Gerar Provas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matérias<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cadastrarMateria.html">Cadastrar</a></li>
+                                <li class="active"><a href="consultarMateria.html">Consultar</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Sobre.html">Sobre</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a class="btn" href="signin.html">Entrar / Cadastrar</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+        <!-- /.navbar -->
+
+        <!-- Header -->
+        <header id="head">
+            <div class="container">
+                <div class="row">
+                    <h1 class="lead">Cadastrar Questão</h1>
+                </div>
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <!-- Intro -->
+        <div class="container text-center">
+            <br> <br>
+            <h2 class="thin">Cadastre rapidamente qualquer questão</h2>
+            <p class="text-muted">
+                Diferente dos outros sites, buscamos rapidez, facilidade, transparência<br> 
+                e um grande compromisso com nossos clientes.
+            </p>
+        </div>
+        <!-- /Intro-->
+
+        <div class="jumbotron top-space">
+            <div class="container">
+
+                <h2 class="text-center thin">Cadastro</h2>
+
+                <div class="row">
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <th style="width: 30%"><label>Selecione a área</label></th>
+                                <th style="width: 70%">
+                                    <select id="disciplina" name="disciplina">
+                                        <option value=""></option>
+                                        <option value="humanas">Humanas</option>
+                                        <option value="cien_bio">Ciências Biológicas</option>
+                                        <option value="ling_estra">Línguas Estrangeiras</option>
+                                        <option value="tecno">Tecnologia</option>
+                                        <option value="cont">Contábeis</option>
+                                        <option value="cont">PI</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td><label>Selecione a dificuldade</label></td>
+                                <td>
+                                    <select id="dificuldade" name="dificuldade">
+                                        <option value=""></option>
+                                        <option value="facil">Fácil</option>
+                                        <option value="medio">Médio</option>
+                                        <option value="dificil">Difícil</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td><label>Escreva o cabeçalho da questão</label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 100%">
+                                <textarea id="subject" name="subject" placeholder="Escreva aqui sua questão" style="height:200px"></textarea>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <table border=1 style="width: 100%">
+                        <tr>
+                            <td style="width: 30%">
+                                <!-- Imagem da questão -->
+                                <div class="detalhe">
+                                    <img id="img_cabecalho" src="" alt="" width="100" height="75" >
+
+                                    <!-- Imagem ao passar o Mouse -->    
+                                    <div class="detalhe-conteudo">
+                                        <img id="img_cabecalho1" alt="" src="" width="400" height="300">
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 70%">
+                                <label for="img_cabecalho_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                <input id="img_cabecalho_file" type="file" onchange="trocarImagem('img_cabecalho_file')">
+                            </td>
+                        </tr>
+                    </table> 
+
+                    <table style="width: 100%">
+                        <tr style="width: 100%">
+                            <td><h4>Escreva a resposta e marque qual a correta</h4></td>
+                        </tr>
+                        <!------------------ Questão A ------------------>
+                        <tr>
+                            <td>
+                                <input type="radio" name="respostaCerta" value="A" />
+                                <label>Resposta A</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="text" id="txt_Resp_A" placeholder="Resposta A.."></td>
+                        </tr>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="detalhe">
+                                        <img id="img_quest_A"  src="" alt="" width="100" height="75">
+
+                                        <!-- Imagem ao passar o Mouse -->    
+                                        <div class="detalhe-conteudo">
+                                            <img id="img_quest_A1" alt="" src="" width="400" height="300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Imagem da questão -->
+                                    <label for="img_quest_A_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                    <input id="img_quest_A_file" type="file" onchange="trocarImagem('img_quest_A_file')">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!------------------ Questão B ------------------>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <input type="radio" name="respostaCerta" value="B" />
+                                <label>Resposta B</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="text" id="txt_Resp_B" placeholder="Resposta B.."></td>
+                        </tr>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="detalhe">
+                                        <img id="img_quest_B"  src="" alt="" width="100" height="75">
+
+                                        <!-- Imagem ao passar o Mouse -->    
+                                        <div class="detalhe-conteudo">
+                                            <img id="img_quest_B1" alt="" src="" width="400" height="300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Imagem da questão -->
+                                    <label for="img_quest_B_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                    <input id="img_quest_B_file" type="file" onchange="trocarImagem('img_quest_B_file')">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!------------------ Questão C ------------------>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <input type="radio" name="respostaCerta" value="C" />
+                                <label>Resposta C</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="text" id="txt_Resp_C" placeholder="Resposta C.."></td>
+                        </tr>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="detalhe">
+                                        <img id="img_quest_C"  src="" alt="" width="100" height="75">
+
+                                        <!-- Imagem ao passar o Mouse -->    
+                                        <div class="detalhe-conteudo">
+                                            <img id="img_quest_C1" alt="" src="" width="400" height="300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Imagem da questão -->
+                                    <label for="img_quest_C_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                    <input id="img_quest_C_file" type="file" onchange="trocarImagem('img_quest_C_file')">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!------------------ Questão D ------------------>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <input type="radio" name="respostaCerta" value="D" />
+                                <label>Resposta D</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="text" id="txt_Resp_D" placeholder="Resposta D.."></td>
+                        </tr>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="detalhe">
+                                        <img id="img_quest_D"  src="" alt="" width="100" height="75">
+
+                                        <!-- Imagem ao passar o Mouse -->    
+                                        <div class="detalhe-conteudo">
+                                            <img id="img_quest_D1" alt="" src="" width="400" height="300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Imagem da questão -->
+                                    <label for="img_quest_D_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                    <input id="img_quest_D_file" type="file" onchange="trocarImagem('img_quest_D_file')">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!------------------ Questão E ------------------>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <input type="radio" name="respostaCerta" value="E" />
+                                <label>Resposta E</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="txt_Resp_E" placeholder="Resposta E.."></td>
+                        </tr>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="detalhe">
+                                        <img id="img_quest_E"  src="" alt="" width="100" height="75">
+
+                                        <!-- Imagem ao passar o Mouse -->    
+                                        <div class="detalhe-conteudo">
+                                            <img id="img_quest_E1" alt="" src="" width="400" height="300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="img_quest_E_file" class="selecionarImg">Selecionar Imagem &#187;</label>
+                                    <input id="img_quest_E_file" type="file" onchange="trocarImagem('img_quest_E_file')">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr style="width: 100%">
+                                <td>
+                                    <input type="button" style="width: 30%; float: right" value="Enviar Resposta" onclick="validarTransacao()">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social links. @TODO: replace by link/instructions in template -->
+        <section id="social">
+            <div class="container">
+                <div class="wrapper clearfix">
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style">
+                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_button_linkedin_counter"></a>
+                        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                    </div>
+                    <!-- AddThis Button END -->
+                </div>
+            </div>
+        </section>
+        <!-- /social links -->
+
+                <footer id="footer">
+
+            <div class="footer1">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Contato</h3>
+                            <div class="widget-body">
+                                <p>+55 11 9999-9999<br>
+                                    <a href="mailto:#">teste@teste.com</a><br>
+                                    <br>
+                                    R. Casa do Ator, 275 - Vila Olimpia, São Paulo - SP, 04546-001
+                                </p>	
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Siga</h3>
+                            <div class="widget-body">
+                                <p class="follow-me-icons clearfix">
+                                    <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                    <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                                    <a href=""><i class="fa fa-github fa-2"></i></a>
+                                    <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                                </p>	
+                            </div>
+                        </div>
+                    </div> <!-- /row of widgets -->
+                </div>
+            </div>
+
+            <div class="footer2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="simplenav">
+                                    <a href="#">Home</a> | 
+                                    <a href="Sobre.html">Sobre</a> |
+                                    <a href="contact.html">Contato</a> |
+                                    <b><a href="signup.html">Entrar</a></b>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="text-right">
+                                    Copyright &copy; 2018. Designed by <a href="http://gettemplate.com/">gettemplate</a> 
+                                </p>
+                            </div>
+                        </div>
+
+                    </div> <!-- /row of widgets -->
+                </div>
+            </div>
+        </footer>	
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="JavaScript/headroom.min.js"></script>
+        <script src="JavaScript/jQuery.headroom.min.js"></script>
+        <script src="JavaScript/template.js"></script>
+    </body>    
+</html>
